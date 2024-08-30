@@ -31,4 +31,6 @@ public class DoubleDirectReceiver {
 
         channel.basicConsume(queueName, true, deliverCallback, consumerTag -> { });
     }
+
+
 }
