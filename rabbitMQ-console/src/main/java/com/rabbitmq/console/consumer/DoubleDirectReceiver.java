@@ -29,6 +29,7 @@ public class DoubleDirectReceiver {
         };  // см. сендера: если нам нужно принимать только 2 кей-понйта, а не 3 (как в сендере), то создаем все равно 1 колл-бек.
         // но создаем 2 роутинга (см. выше)
 
-        channel.basicConsume(queueName, true, deliverCallback, consumerTag -> { });
+        channel.basicConsume(queueName, true, deliverCallback, consumerTag -> { });  // это вешается в пуле потоков слушателей (вешаем колл-бек на очередь )
+        // и он ждет, когда сообщение придет, чтобы среагировать колл-беком
     }
 }
